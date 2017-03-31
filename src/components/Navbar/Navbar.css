@@ -1,0 +1,21 @@
+.NavbarComponent {
+    background-color: #4b4b4;
+    margin-bottom: 0px;
+    border-radius: 0px;
+    border: none;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.app-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40px;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

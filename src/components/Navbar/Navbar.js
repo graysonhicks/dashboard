@@ -1,23 +1,16 @@
 import React, { Component } from 'react';
 import { Navbar, Nav, NavItem, NavDropdown, MenuItem, Image } from 'react-bootstrap';
-import logo from '../logo.svg';
-
-var navbarStyles = {
-    'backgroundColor': '#4b4b4b',
-    'marginBottom': '0px',
-    'borderRadius': '0px',
-    'border': 'none'
-}
+import './Navbar.css';
+import logo from '../../logo.svg';
 
 class NavbarComponent extends Component {
 
-
   render() {
     return (
-        <Navbar style={navbarStyles} inverse collapseOnSelect>
+        <Navbar className="NavbarComponent" inverse collapseOnSelect>
             <Navbar.Header>
               <Navbar.Brand>
-                <Image className="app-logo" src={logo} />
+                <Image className="app-logo" src={logo}/>
                 CRA Dashboard
               </Navbar.Brand>
               <Navbar.Toggle />

@@ -3,9 +3,9 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 
 import { Grid, Row, Col } from 'react-bootstrap';
-import HeadingComponent from './components/Heading';
-import NavbarComponent from './components/Navbar';
-import SidebarComponent from './components/Sidebar'
+import HeadingComponent from './components/Heading/Heading-1';
+import NavbarComponent from './components/Navbar/Navbar';
+import SidebarComponent from './components/Sidebar/Sidebar'
 
 class App extends Component {
   render() {

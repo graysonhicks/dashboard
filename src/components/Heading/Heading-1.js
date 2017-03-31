@@ -1,17 +1,11 @@
 import React, { Component } from 'react';
-
-var headingStyles = {
-    'fontWeight' : 'bold',
-    'fontSize' : '32px',
-    'color': '#2B2B2B',
-    'borderBottom': '1px solid #2B2B2B'
-}
+import './Heading-1.css';
 
 class HeadingComponent extends Component {
   render() {
     return (
       <div className="Heading">
-        <h1 style={ headingStyles }>{this.props.text}</h1>
+        <h1 className="heading-1">{this.props.text}</h1>
       </div>
     );
   }
