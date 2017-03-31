@@ -18,7 +18,7 @@ class NavbarComponent extends Component {
             <Navbar.Header>
               <Navbar.Brand>
                 <Image className="app-logo" src={logo} />
-                VJS Dashboard
+                CRA Dashboard
               </Navbar.Brand>
               <Navbar.Toggle />
             </Navbar.Header>
