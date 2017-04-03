@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { FormGroup, ControlLabel, FormControl } from 'react-bootstrap';
 import './UserSelect.css';
+import UserOptionComponent from '../UserOption/UserOption'
 
 class UserSelectComponent extends Component {
 

@@ -9,6 +9,23 @@ import SidebarComponent from './components/Sidebar/Sidebar'
 import UserSelectComponent from './components/UserSelect/UserSelect'
 import UserStatsComponent from './components/UserStats/UserStats'
 
+const users = [
+    {
+        name: "Grayson Hicks",
+        age: 27,
+        bio: "bio 1"
+    }, {
+        name: "Thomas Merton",
+        age: 32,
+        bio: "bio 2"
+    }, {
+        name: "Albert Einstein",
+        age: 47,
+        bio: "bio 3"
+    }
+];
+
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -22,15 +39,11 @@ class App extends Component {
   changeUser(e) {
 
     this.setState({
-      user: {
-        name: e.target.value,
-        age: 27,
-        bio: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-      }
+      user: this.users[e.target.value]
     });
   }
   render() {
-      console.log(this.state);
+
     return (
       <div className="app">
           <Grid className="app-container">
@@ -45,7 +58,7 @@ class App extends Component {
 
                       </Col>
                       <Col xs={3}>
-                          <UserSelectComponent label="Choose Your User" changeUser={this.changeUser} user={this.state.user} ></UserSelectComponent>
+                          <UserSelectComponent label="Choose Your User" users={this.users} changeUser={this.changeUser} user={this.state.user} ></UserSelectComponent>
                       </Col>
                   </Row>
                   <Row>
