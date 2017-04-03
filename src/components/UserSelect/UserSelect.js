@@ -10,9 +10,14 @@ class UserSelectComponent extends Component {
         <FormGroup controlId="formControlsSelect">
           <ControlLabel>{this.props.label}</ControlLabel>
           <FormControl componentClass="select" onChange={this.props.changeUser} placeholder="User">
-            <option value="Grayson Hicks">Grayson Hicks</option>
-            <option value="Thomas Merton">Thomas Merton</option>
-            <option value="Albert Einstein">Albert Einstein</option>
+            {this.props.users.map((user, i) =>
+
+                <UserOptionComponent key={i}
+                                     name={user.name}
+                                     index={i}
+
+                    />
+            )}
           </FormControl>
         </FormGroup>
 

@@ -9,23 +9,6 @@ import SidebarComponent from './components/Sidebar/Sidebar'
 import UserSelectComponent from './components/UserSelect/UserSelect'
 import UserStatsComponent from './components/UserStats/UserStats'
 
-const users = [
-    {
-        name: "Grayson Hicks",
-        age: 27,
-        bio: "bio 1"
-    }, {
-        name: "Thomas Merton",
-        age: 32,
-        bio: "bio 2"
-    }, {
-        name: "Albert Einstein",
-        age: 47,
-        bio: "bio 3"
-    }
-];
-
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -35,6 +18,22 @@ class App extends Component {
 
     this.changeUser = this.changeUser.bind(this);
   }
+
+  users = [
+      {
+          name: "Grayson Hicks",
+          age: 27,
+          bio: "bio 1"
+      }, {
+          name: "Thomas Merton",
+          age: 32,
+          bio: "bio 2"
+      }, {
+          name: "Albert Einstein",
+          age: 47,
+          bio: "bio 3"
+      }
+  ];
 
   changeUser(e) {
 
