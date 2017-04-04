@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { ListGroup, ListGroupItem, Row, Col, Image } from 'react-bootstrap';
+import { ListGroup, Row, Col, Image } from 'react-bootstrap';
+import SideBarStatComponent from '../SideBarStat/SideBarStat'
 import './Sidebar.css';
 
 class SidebarComponent extends Component {
@@ -12,9 +13,21 @@ class SidebarComponent extends Component {
                             <Image src="http://placehold.it/170x181" rounded />
                         </div>
                         <ListGroup>
-                          <ListGroupItem className="sidebar-list-group-item" href="#" active>Link 1</ListGroupItem>
-                          <ListGroupItem className="sidebar-list-group-item" href="#">Link 2</ListGroupItem>
-                          <ListGroupItem className="sidebar-list-group-item" href="#" disabled>Link 3</ListGroupItem>
+                            {this.props.stats.map((stat, i) =>
+
+                                <SideBarStatComponent
+                                    className="sidebar-list-group-item"
+                                    href="#"
+                                    key={i}
+                                    name={stat}
+                                    index={i}
+                                    onChange={this.props.changeStat}
+                                    />
+
+
+                            )}
+
+
                         </ListGroup>
                 </Col>
             </Row>

@@ -13,7 +13,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        user: {}
+        user: {},
+        stat: {}
     };
 
     this.changeUser = this.changeUser.bind(this);
@@ -35,10 +36,23 @@ class App extends Component {
       }
   ];
 
+  stats = [
+      "Videos Watched",
+      "Careers Created",
+      "Reports Completed"
+  ]
+
   changeUser(e) {
 
     this.setState({
       user: this.users[e.target.value]
+    });
+  }
+
+  changeStat(e) {
+
+    this.setState({
+      stat: this.users[e.target.value]
     });
   }
   render() {
@@ -47,7 +61,7 @@ class App extends Component {
       <div className="app">
           <Grid className="app-container">
               <Col xs={3} className="sidebar-container">
-                  <SidebarComponent></SidebarComponent>
+                  <SidebarComponent stats={this.stats}></SidebarComponent>
               </Col>
               <Col xs={9} className="content-container">
                   <Row>

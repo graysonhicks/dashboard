@@ -1,6 +1,4 @@
-import React, {
-    Component
-} from 'react';
+import React from 'react';
 import './UserOption.css';
 
 export const UserOptionComponent = ({name, index}) => {
