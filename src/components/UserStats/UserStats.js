@@ -4,11 +4,6 @@ import './UserStats.css';
 
 class UserStatsComponent extends Component {
 
-  defaultProps = {
-      user: {
-        name: "Thomas"
-      }
-  }
   render() {
     return (
       <div className="user-stats-container">

@@ -12,9 +12,17 @@ import UserStatsComponent from './components/UserStats/UserStats'
 class App extends Component {
     constructor(props) {
         super(props);
+        
         this.state = {
-            user: {},
-            stat: {}
+            user: {
+                name: "Default User Name",
+                age: "Default User Age",
+                bio: "Default User Bio"
+            },
+            stat: {
+                name: "Default Stat Name",
+                description: "Default Stat Description"
+            }
         };
 
         this.changeUser = this.changeUser.bind(this);
