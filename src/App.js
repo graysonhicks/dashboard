@@ -1,7 +1,13 @@
+// LIBS
 import React, {Component} from 'react';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+
+// CSS
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 
+
+// COMPONENTS
 import {Grid, Row, Col} from 'react-bootstrap';
 import HeadingComponent from './components/Heading/Heading-1';
 import NavbarComponent from './components/Navbar/Navbar';
@@ -12,7 +18,7 @@ import UserStatsComponent from './components/UserStats/UserStats'
 class App extends Component {
     constructor(props) {
         super(props);
-        
+
         this.state = {
             user: {
                 name: "Default User Name",
