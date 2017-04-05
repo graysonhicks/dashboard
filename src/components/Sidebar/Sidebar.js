@@ -19,9 +19,9 @@ class SidebarComponent extends Component {
                                     className="sidebar-list-group-item"
                                     href="#"
                                     key={i}
-                                    name={stat}
+                                    name={stat.name}
                                     index={i}
-                                    onChange={this.props.changeStat}
+                                    changeStat={this.props.changeStat}
                                     />
 
 
