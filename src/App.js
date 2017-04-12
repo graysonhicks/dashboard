@@ -27,12 +27,34 @@ class App extends Component {
             },
             stat: {
                 name: "Default Stat Name",
-                description: "Default Stat Description"
-            }
+                description: "Default Stat Description",
+                data: {
+                    labels: [
+                        'Red',
+                        'Green',
+                        'Yellow'
+                    ],
+                    datasets: [{
+                        data: [300, 50, 100],
+                        backgroundColor: [
+                        '#FF6384',
+                        '#36A2EB',
+                        '#FFCE56'
+                        ],
+                        hoverBackgroundColor: [
+                        '#FF6384',
+                        '#36A2EB',
+                        '#FFCE56'
+                        ]
+                    }]
+                }
+            },
+
         };
 
         this.changeUser = this.changeUser.bind(this);
         this.changeStat = this.changeStat.bind(this);
+
     }
 
     users = [
@@ -54,15 +76,81 @@ class App extends Component {
     stats = [
         {
             name: "Videos Watched",
-            description: "The number of videos watched in a given month"
+            description: "The number of videos watched in a given month",
+            data: {
+            	labels: [
+            		'Red',
+            		'Green',
+            		'Yellow'
+            	],
+            	datasets: [{
+            		data: [300, 50, 100],
+            		backgroundColor: [
+            		'#FF6384',
+            		'#36A2EB',
+            		'#FFCE56'
+            		],
+            		hoverBackgroundColor: [
+            		'#FF6384',
+            		'#36A2EB',
+            		'#FFCE56'
+            		]
+            	}]
+            }
         }, {
             name: "Careers Created",
-            description: "The number of careers created in a given month"
+            description: "The number of careers created in a given month",
+            data: {
+            	labels: [
+            		'Red',
+            		'Green',
+            		'Yellow'
+            	],
+            	datasets: [{
+            		data: [200, 150, 400],
+            		backgroundColor: [
+            		'#FF6384',
+            		'#36A2EB',
+            		'#FFCE56'
+            		],
+            		hoverBackgroundColor: [
+            		'#FF6384',
+            		'#36A2EB',
+            		'#FFCE56'
+            		]
+            	}]
+            }
         }, {
             name: "Reports Completed",
-            description: "The number of reports completed in a given month"
+            description: "The number of reports completed in a given month",
+            data: {
+            	labels: [
+            		'Red',
+            		'Green',
+            		'Yellow'
+            	],
+            	datasets: [{
+            		data: [100, 50, 300],
+            		backgroundColor: [
+            		'#FF6384',
+            		'#36A2EB',
+            		'#FFCE56'
+            		],
+            		hoverBackgroundColor: [
+            		'#FF6384',
+            		'#36A2EB',
+            		'#FFCE56'
+            		]
+            	}]
+            }
         }
     ];
+
+
+
+
+
+
 
     changeUser(e) {
 

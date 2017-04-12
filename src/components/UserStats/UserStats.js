@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Row, Col} from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import './UserStats.css';
+import UserDoughnutComponent from '../UserDoughnut/UserDoughnut'
 
 class UserStatsComponent extends Component {
 
@@ -18,6 +19,11 @@ class UserStatsComponent extends Component {
             <Col xs={12}>
                 <h2 className="stat-heading"> {this.props.stat.name} </h2>
                 <p> {this.props.stat.description} </p>
+            </Col>
+          </Row>
+          <Row>
+            <Col xs={12}>
+                <UserDoughnutComponent stat={this.props.stat}></UserDoughnutComponent>
             </Col>
           </Row>
       </div>
