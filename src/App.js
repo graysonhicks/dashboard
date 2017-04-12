@@ -69,6 +69,7 @@ class App extends Component {
         this.setState({
             user: this.users[e.target.value]
         });
+
     }
 
     changeStat(index, e) {
