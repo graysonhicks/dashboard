@@ -84,16 +84,16 @@ class App extends Component {
             		'Yellow'
             	],
             	datasets: [{
-            		data: [300, 50, 100],
+            		data: [120, 35, 400],
             		backgroundColor: [
-            		'#FF6384',
-            		'#36A2EB',
-            		'#FFCE56'
+            		'#AA3939',
+            		'#226666',
+            		'#7A9F35'
             		],
             		hoverBackgroundColor: [
-            		'#FF6384',
-            		'#36A2EB',
-            		'#FFCE56'
+            		'#AA3939',
+            		'#226666',
+            		'#7A9F35'
             		]
             	}]
             }
@@ -109,14 +109,14 @@ class App extends Component {
             	datasets: [{
             		data: [200, 150, 400],
             		backgroundColor: [
-            		'#FF6384',
-            		'#36A2EB',
-            		'#FFCE56'
+            		'#FF0000',
+            		'#00B8B8',
+            		'#A2F300'
             		],
             		hoverBackgroundColor: [
-            		'#FF6384',
-            		'#36A2EB',
-            		'#FFCE56'
+            		'#FF0000',
+            		'#00B8B8',
+            		'#A2F300'
             		]
             	}]
             }
@@ -130,16 +130,16 @@ class App extends Component {
             		'Yellow'
             	],
             	datasets: [{
-            		data: [100, 50, 300],
+            		data: [100, 300, 50],
             		backgroundColor: [
-            		'#FF6384',
-            		'#36A2EB',
-            		'#FFCE56'
+            		'#F00038',
+            		'#FFEB00',
+            		'#0B5EC1'
             		],
             		hoverBackgroundColor: [
-            		'#FF6384',
-            		'#36A2EB',
-            		'#FFCE56'
+            		'#F00038',
+            		'#FFEB00',
+            		'#0B5EC1'
             		]
             	}]
             }

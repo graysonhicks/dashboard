@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Row, Col } from 'react-bootstrap';
 import './UserStats.css';
-import UserDoughnutComponent from '../UserDoughnut/UserDoughnut'
+import UserDoughnutComponent from '../UserDoughnut/UserDoughnut';
+import UserLineComponent from '../UserLine/UserLine'
 
 class UserStatsComponent extends Component {
 
@@ -22,8 +23,11 @@ class UserStatsComponent extends Component {
             </Col>
           </Row>
           <Row>
-            <Col xs={12}>
+            <Col xs={6}>
                 <UserDoughnutComponent stat={this.props.stat}></UserDoughnutComponent>
+            </Col>
+            <Col xs={6}>
+                <UserLineComponent stat={this.props.stat}></UserLineComponent>
             </Col>
           </Row>
       </div>
