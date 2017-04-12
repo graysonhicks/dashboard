@@ -2,7 +2,7 @@
   "name": "vjs-dashboard",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://graysonhicks.github.io/dashboard",
+  "homepage": "https://graysonhicks.github.io/dashboard/",
   "dependencies": {
     "bootstrap": "^3.3.7",
     "chart.js": "^2.5.0",
