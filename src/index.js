@@ -10,7 +10,7 @@ ReactDOM.render(
     <div>
         <Route exact path="/" component={App}></Route>
         <Route path="/user" component={App}></Route>
-        <Route path="*" component={WhoopsComponent}></Route>
+        <Route path="*" component={App}></Route>
     </div>
   </Router>,
   document.getElementById('root')
