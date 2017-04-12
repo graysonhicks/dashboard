@@ -169,7 +169,7 @@ class App extends Component {
 
     }
     render() {
-console.log(this.state);
+
         return (
             <div className="app">
                 <Grid className="app-container">
