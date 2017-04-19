@@ -104,24 +104,49 @@ class App extends Component {
             console.err(`'${err}' happened!`);
             return {};
         })).then((json) => {
-            console.log('parsed json: ', json);
-            this.setState({users: json.results})
+            console.log('parsed json: ', json.results);
+            this.setState({
+                users: json.results,
+                user: json.results[0],
+                stats: [
+                    {
+                        name: "Height / Mass",
+                        description: "Height and Mass Description",
+                        data: {
+                            labels: [
+                                'Height', 'Mass'
+                            ],
+                            datasets: [
+                                {
+                                    data: [
+                                        json.results[0].height, json.results[0].mass
+                                    ],
+                                    backgroundColor: [
+                                        '#FF6384'
+                                    ],
+                                    hoverBackgroundColor: ['#FF6384']
+                                }
+                            ]
+                        }
+                    }
+
+                ]
+            })
         }).catch((err) => {
             console.log('fetch request failed: ', err)
         })
     }
 
     changeUser(e) {
-
         this.setState({
-            user: this.users[e.target.value]
+            user: this.state.users[e.target.value]
         });
 
     }
 
     changeStat(index, e) {
 
-        this.setState({stat: this.stats[index]});
+        this.setState({stat: this.state.stats[index]});
 
     }
     render() {

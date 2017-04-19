@@ -12,8 +12,8 @@ class UserStatsComponent extends Component {
           <Row>
               <Col xs={12}>
                   <h1 className="user-heading">User Name: {this.props.user.name} </h1>
-                  <h3>User Age: {this.props.user.age} </h3>
-                  <p>User Bio: {this.props.user.bio} </p>
+                  <h3>Birth Year: {this.props.user.birth_year} </h3>
+                  <p>Eye Color: {this.props.user.eye_color} </p>
               </Col>
           </Row>
           <Row>

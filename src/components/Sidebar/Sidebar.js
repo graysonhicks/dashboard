@@ -6,6 +6,7 @@ import './Sidebar.css';
 class SidebarComponent extends Component {
 
   render() {
+      console.log(this.props.stats);
     return (
             <Row>
                 <Col xs={12}>
