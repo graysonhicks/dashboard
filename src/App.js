@@ -1,11 +1,9 @@
 // LIBS
 import React, {Component} from 'react';
 
-
 // CSS
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
-
 
 // COMPONENTS
 import {Grid, Row, Col} from 'react-bootstrap';
@@ -30,127 +28,88 @@ class App extends Component {
                 description: "Default Stat Description",
                 data: {
                     labels: [
-                        'Red',
-                        'Green',
-                        'Yellow'
+                        'Red', 'Green', 'Yellow'
                     ],
-                    datasets: [{
-                        data: [300, 50, 100],
-                        backgroundColor: [
-                        '#FF6384',
-                        '#36A2EB',
-                        '#FFCE56'
-                        ],
-                        hoverBackgroundColor: [
-                        '#FF6384',
-                        '#36A2EB',
-                        '#FFCE56'
-                        ]
-                    }]
+                    datasets: [
+                        {
+                            data: [
+                                300, 50, 100
+                            ],
+                            backgroundColor: [
+                                '#FF6384', '#36A2EB', '#FFCE56'
+                            ],
+                            hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56']
+                        }
+                    ]
                 }
             },
+            users: [
+                            {
+                  "name": "Luke Skywalker",
+                  "height": "1.72 m",
+                  "mass": "77 Kg",
+                  "hair_color": "Blond",
+                  "skin_color": "Caucasian",
+                  "eye_color": "Blue",
+                  "birth_year": "19 BBY",
+                  "gender": "Male",
+                  "homeworld": "http://swapi.co/api/planets/1/",
+                  "films": [
+                      "http://swapi.co/api/films/1/",
+                      "http://swapi.co/api/films/2/",
+                      "http://swapi.co/api/films/3/"
+                  ],
+                  "species": [
+                      "http://swapi.co/api/species/1/"
+                  ],
+                  "vehicles": [
+                      "http://swapi.co/api/vehicles/14/",
+                      "http://swapi.co/api/vehicles/30/"
+                  ],
+                  "starships": [
+                      "http://swapi.co/api/starships/12/",
+                      "http://swapi.co/api/starships/22/"
+                  ],
+                  "created": "2014-12-09T13:50:51.644000Z",
+                  "edited": "2014-12-10T13:52:43.172000Z",
+                  "url": "http://swapi.co/api/people/1/"
+            }
+
+            ],
+            stats: []
 
         };
 
+        this.fetchData = this.fetchData.bind(this);
+        this.setData = this.setData.bind(this);
         this.changeUser = this.changeUser.bind(this);
         this.changeStat = this.changeStat.bind(this);
 
     }
 
-    users = [
-        {
-            name: "Grayson Hicks",
-            age: 27,
-            bio: "bio 1"
-        }, {
-            name: "Thomas Merton",
-            age: 32,
-            bio: "bio 2"
-        }, {
-            name: "Albert Einstein",
-            age: 47,
-            bio: "bio 3"
-        }
-    ];
+    componentDidMount() {
+        this.fetchData();
+    }
+    setData(json) {
+        console.log(json);
+    }
 
-    stats = [
-        {
-            name: "Videos Watched",
-            description: "The number of videos watched in a given month",
-            data: {
-            	labels: [
-            		'Red',
-            		'Green',
-            		'Yellow'
-            	],
-            	datasets: [{
-            		data: [120, 35, 400],
-            		backgroundColor: [
-            		'#AA3939',
-            		'#226666',
-            		'#7A9F35'
-            		],
-            		hoverBackgroundColor: [
-            		'#AA3939',
-            		'#226666',
-            		'#7A9F35'
-            		]
-            	}]
+    fetchData() {
+
+        fetch('http://swapi.co/api/people', {
+            headers: {
+                'Accept': 'application/json'
             }
-        }, {
-            name: "Careers Created",
-            description: "The number of careers created in a given month",
-            data: {
-            	labels: [
-            		'Red',
-            		'Green',
-            		'Yellow'
-            	],
-            	datasets: [{
-            		data: [200, 150, 400],
-            		backgroundColor: [
-            		'#FF0000',
-            		'#00B8B8',
-            		'#A2F300'
-            		],
-            		hoverBackgroundColor: [
-            		'#FF0000',
-            		'#00B8B8',
-            		'#A2F300'
-            		]
-            	}]
-            }
-        }, {
-            name: "Reports Completed",
-            description: "The number of reports completed in a given month",
-            data: {
-            	labels: [
-            		'Red',
-            		'Green',
-            		'Yellow'
-            	],
-            	datasets: [{
-            		data: [100, 300, 50],
-            		backgroundColor: [
-            		'#F00038',
-            		'#FFEB00',
-            		'#0B5EC1'
-            		],
-            		hoverBackgroundColor: [
-            		'#F00038',
-            		'#FFEB00',
-            		'#0B5EC1'
-            		]
-            	}]
-            }
-        }
-    ];
-
-
-
-
-
-
+        }).then((response) => response.json().catch(err => {
+            console.err(`'${err}' happened!`);
+            return {};
+        })).then((json) => {
+            console.log('parsed json: ', json);
+            this.setState({users: json.results})
+        }).catch((err) => {
+            console.log('fetch request failed: ', err)
+        })
+    }
 
     changeUser(e) {
 
@@ -162,10 +121,7 @@ class App extends Component {
 
     changeStat(index, e) {
 
-        this.setState({
-            stat: this.stats[index]
-        });
-
+        this.setState({stat: this.stats[index]});
 
     }
     render() {
@@ -174,7 +130,7 @@ class App extends Component {
             <div className="app">
                 <Grid className="app-container">
                     <Col xs={3} className="sidebar-container">
-                        <SidebarComponent stats={this.stats} changeStat={this.changeStat}></SidebarComponent>
+                        <SidebarComponent stats={this.state.stats} changeStat={this.changeStat}></SidebarComponent>
                     </Col>
                     <Col xs={9} className="content-container">
                         <Row>
@@ -184,7 +140,7 @@ class App extends Component {
 
                             </Col>
                             <Col xs={3}>
-                                <UserSelectComponent label="Choose Your User" users={this.users} changeUser={this.changeUser} user={this.state.user}></UserSelectComponent>
+                                <UserSelectComponent label="Choose Your User" users={this.state.users} changeUser={this.changeUser} user={this.state.user}></UserSelectComponent>
                             </Col>
                         </Row>
                         <Row>
